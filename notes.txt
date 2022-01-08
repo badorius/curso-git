@@ -1,0 +1,41 @@
+git config --global user.email "salvadormuntane@gmail.com" 
+git config --global user.name "badorius" 
+git version
+git init ->crear repo git
+git status -> ver que ficheros gestiona git
+git add index index.html -> lo pasamos a stageing area, faltara el commit
+git status -> para ver index.html en stageing
+git commit -m " add index.html" 
+#hacemos cambios en el index.html
+git status -> veremos que hemos modificado el index.html (tambien lo veremos en el editor)
+git add index.html
+git commit -m "Aadido el contenido del blog" 
+git log -> vemos los dos commits realizados y el que esta activo en el master
+git checkout f1daaa3256fff3d246f1a3528ac583309c3fbd33 -> para volver a la version anterior (cogiengo el hash de git log) nos muestra un warging de deatached HEAD
+git checkout b69178081f1f594e4603c52b47d31a10ac2d8f4a -> volvemos a la ultima, veremos que el texto en el editor se nos actualiza
+git checkout master -> esto nos devuelve al ultimo commit que hemos realizado y dejamos de estar de deatached HEAD. Mas adelante veremos las ramas.
+
+#Como deshacer cambios, no me gusta el ultimo cambio y buscamos una manera mejor de haccerlo
+git reset f1daaa -> eliminamos el commit que no queremos, lo revisamos con un git log
+git log
+git add index.html
+git status -> veremos que el index.html ha estado modificado.
+git commit -m "Contenido del blog"  -> hacemos el commit con el nuevo cambio 
+git log -> lo verificamos
+git reset --hard f1daaa -> A diferencia del anterior, este lo elimina de manera definitva todos los cambios del hash en adelante, es cuando lo realizado ya no se quiere.
+#recreamos el index.html con el contenido correcto y luego
+git add index.html
+git commit -m " Contenido del blog" 
+git log --oneline -> para que lo muestre en una sola linea
+
+
+#borramos por error un fichero gestionado con el git (rm index.html) no perdemos nada si no hacemos git reset --hard
+git status -> veremos que hemos eliminado el index.html
+git restore index.html-> restauramos el fichero index.html
+#Todos los archivos y carpetas estan en la carpeta .git
+
+#Aadimos mas ficheros, populamos el fichero style.css
+
+
+
+
