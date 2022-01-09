@@ -44,7 +44,7 @@ git remote -v -> de donde podemos descargar (fetch) o subir (push)
 git branch -M main -> cambiar el nombre de la rama, por ahora lo dejaremos como master
 
 #crear claves ssh antes de hacer el push
-ssh-keygen -t ed25519 -C "salvadormuntane@gmail.com" (generamos clave publica y privada)
+ssh-keygen -t ed25519 -C "salvadormuntane@gmail.com" (generamos clave publica y privada) en setings de github, subimos la pub
 git push -u origin master
 
 
