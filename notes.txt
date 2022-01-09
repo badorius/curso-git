@@ -68,6 +68,17 @@ git push -u origin feature-posts-styles
 git checkout master ->cambiamos a master y no vemos los cambios de la rama feautre-posts-estyles
 git checkout feature-posts-styles -> cambiamos de nuevo a la rama feature-posts-styles
 
+#En git hub ya nos muestra una alarma de que existe una rama con la opción de compare & pull request.
+#Ahora realizaremos otro clone, para simular otra persona trabajando en otra rama. La ruta la copiamos del botón code->ssh de github
+
+git clone git@github.com:badorius/curso-git.git persona-backend
+
+#Volvemos a la rama master y creamos un README.md Antes hacemos los add, commit y push
+git add notes.txt 
+git status
+git commit -m "Add post notes.v3"
+git push -u origin feature-posts-styles
+git checkout master
 
 
 
