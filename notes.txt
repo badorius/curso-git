@@ -45,7 +45,32 @@ git branch -M main -> cambiar el nombre de la rama, por ahora lo dejaremos como 
 
 #crear claves ssh antes de hacer el push
 ssh-keygen -t ed25519 -C "salvadormuntane@gmail.com" (generamos clave publica y privada) en setings de github, subimos la pub
-git push -u origin master
+git push -u origin master -> esto solo la primera vez, las siguientes git push 
+
+####como crear ramas, si hay varias personas trabajando en el mismo proyecto, no es buena idea trabajar en la rama principal (master) creamos una bifurcación en la rama principal (master o main) 
+####cada uno trabaja en una rama y al final se mezclan las ramas en el master, es mas facil para solucionar conflictos.
+
+git checkout -b feature-posts-styles -> Al igual que antes utilizábamos el checkout para volver a un commit anterior, ahora lo utilizaremos para crear una nueva rama
+git branch -> veremos en que rama estamos, en el editor también en la barra inferior.
+
+###Realizamos cambios en el index.html y sytle.css, una vez realizados los cambios, al estar en la rama feature-posts-styles
+git status -> revisamos los cambios
+git add index.html
+git commit -m "Add post html"
+git add style.css
+git commit -m "Add post style"
+#Podriamos añadir los dos ficheros a la vez y realizar un único commit, pero de esta forma lo hacemos más granular.
+#aquí hemos finalizado la rama, ahora hay que añadir nuestra rama al master
+git log --oneline
+#ahora hemos creado una rama en local, pero hay que crearla en github, con esto creamos y subimos la nueva rama
+git push -u origin feature-posts-styles
+#Tanto en github como en el vscode podremos ver la nueva rama todos los cambios, si cambiamos a la rama master no veremos los cambios de la nueva rama
+git checkout master ->cambiamos a master y no vemos los cambios de la rama feautre-posts-estyles
+
+
+
+
+
 
 
 
