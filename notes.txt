@@ -80,6 +80,9 @@ git commit -m "Add post notes.v3"
 git push -u origin feature-posts-styles
 git checkout master
 
+#creamos un fichero READM.md y lo populamos, (sintaxis markdown) hacemos add, commit y push, podemos ver el readme en el git. Ahora tenemos modificaciones diferentes en las dos ramas, hasta que no las mezclemos.
+
+
 
 
 
