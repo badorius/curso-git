@@ -66,7 +66,7 @@ git log --oneline
 git push -u origin feature-posts-styles
 #Tanto en github como en el vscode podremos ver la nueva rama todos los cambios, si cambiamos a la rama master no veremos los cambios de la nueva rama
 git checkout master ->cambiamos a master y no vemos los cambios de la rama feautre-posts-estyles
-
+git checkout feature-posts-styles -> cambiamos de nuevo a la rama feature-posts-styles
 
 
 
