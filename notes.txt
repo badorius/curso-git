@@ -34,8 +34,18 @@ git status -> veremos que hemos eliminado el index.html
 git restore index.html-> restauramos el fichero index.html
 #Todos los archivos y carpetas estan en la carpeta .git
 
-#Aadimos mas ficheros, populamos el fichero style.css
+#Aadimos mas ficheros, populamos el fichero style.css y hacemos cambios en el index.html i la img
+git add . -> metemos todo el directorio actual en stageing area
+git commit -m "Create Navbar"
 
+#Subir contenido en github (se puede subir por ssh o https)
+git remote add origin git@github.com:badorius/curso-git.git
+git remote -v -> de donde podemos descargar (fetch) o subir (push)
+git branch -M main -> cambiar el nombre de la rama, por ahora lo dejaremos como master
+
+#crear claves ssh antes de hacer el push
+ssh-keygen -t ed25519 -C "salvadormuntane@gmail.com" (generamos clave publica y privada)
+git push -u origin master
 
 
 
