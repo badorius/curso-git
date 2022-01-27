@@ -97,7 +97,8 @@ git commit -m "Add advertisment html"
 
 git checkout -b feature-load-adds-from-api
 #creamos el index.js y hacemos el commit
-git
+git add .
+git commit -m "Create load adds function"
 #estas ramas solo existen en local, no estan en el gi, a no ser que hagamos un push -u origin $NOMBRE_RAMA
 #mezclamos la rama de publicidad y su subrama en local, volvemos a la rama anterior con
 git checkout feature-adds
