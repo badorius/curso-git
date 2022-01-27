@@ -92,9 +92,17 @@ git checkout -b feature-adds
 #modificamos el html
 git add .
 git commit -m "Add advertisment html"
+#Ahora nos damos cuenta que esta nueva rama, será muy complicada y tendremos muchos commits, hacemos una nueva rama dentro de esta ultima
 
 
-
+git checkout -b feature-load-adds-from-api
+#creamos el index.js y hacemos el commit
+git
+#estas ramas solo existen en local, no estan en el gi, a no ser que hagamos un push -u origin $NOMBRE_RAMA
+#mezclamos la rama de publicidad y su subrama en local, volvemos a la rama anterior con
+git checkout feature-adds
+#Una vez en la rama feauture-adds, meclamos la rama en la que estamos con la anterior con feature-load-adds-from-api
+git merge feature-load-adds-from-api
 
 
 
