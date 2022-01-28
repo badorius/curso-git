@@ -138,7 +138,11 @@ git push -u origin feature-video-pull-request
 #Ahora en github nos vamos a contribute open pull request, ahí seleccionamos el origen destino, en este caso orgine nuestra rama que haremos merge a la master de mastermindac
 #En entornos profesionales, normalmente la rama master es el codigo que hay en producción la que hay en los servidores, luego puede existir, la dev, test, etc.c..
 
-
-
-
-
+#Como resolver conflictos
+#Con un supuesto bug, vamos a issues y creamos un issue Titulo bug... comentarios...
+#para resolver el bug, primero siempre un pull para actualizar todos los cambios
+git pull
+git checkout -b bugfix-2-curso-git -> el numero 2 corresponde al ide de issue en github
+#Que pasa si otra persona al mismo tiempo decide arreglar este bug.
+git clone git@github.com:badorius/curso-git.git persona2-curso-git
+git checkout -b bugfix-2-curso-git-persona2
