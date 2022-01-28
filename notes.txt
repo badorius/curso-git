@@ -123,9 +123,20 @@ git log --graph --oneline #vemos los logs de las ramas/tareas
 #Se puede contribuir a un proyecto open source, descargar un proyecto
 #se hace un fork de un repositorio a tu git hub, subir los cambios a tu github y cuando este listo, hacer un merge de tu github a otro repositorio.
 #Simularemos un forkk con el mismo git de cursogit
-#Vamos a github https://github.com/mastermindac/curso-git, proyecto curso-git y 
-
-
+#Vamos a github https://github.com/mastermindac/curso-git, proyecto curso-git y le damos a fork, seleccionamos nuestra cuenta.
+#como hacemos cambios en este fork, copiamos el enlace ssh y hacemos un git clone 
+#vamos al index.js y ponemos un comentario //video pull request
+git clone git@github.com:badorius/curso-git-1.git
+#hacemos la modificacion en el index.js y creamos una rama
+git checkout -b feature-video-pull-request
+git add .
+git commit -m "Video pull requesst"
+#lo subimos, pero hay que crear la rama en remoto
+#si te clonas un repositorio, tiene ya el origin predefinido, lo podemos ver con git remote -v
+#como ya tenemos el origin, lo subimos al origin
+git push -u origin feature-video-pull-request 
+#Ahora en github nos vamos a contribute open pull request, ahí seleccionamos el origen destino, en este caso orgine nuestra rama que haremos merge a la master de mastermindac
+#En entornos profesionales, normalmente la rama master es el codigo que hay en producción la que hay en los servidores, luego puede existir, la dev, test, etc.c..
 
 
 
