@@ -119,7 +119,11 @@ git log --graph --oneline #vemos los logs de las ramas/tareas
 #y solo haces un push de una rama para luego hacer un unico merge en el master de tu tarea frontend/backend.
 
 
-
+#Como hacer un fork y añadir cambios
+#Se puede contribuir a un proyecto open source, descargar un proyecto
+#se hace un fork de un repositorio a tu git hub, subir los cambios a tu github y cuando este listo, hacer un merge de tu github a otro repositorio.
+#Simularemos un forkk con el mismo git de cursogit
+#Vamos a github https://github.com/mastermindac/curso-git, proyecto curso-git y 
 
 
 
