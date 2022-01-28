@@ -146,3 +146,24 @@ git checkout -b bugfix-2-curso-git -> el numero 2 corresponde al ide de issue en
 #Que pasa si otra persona al mismo tiempo decide arreglar este bug.
 git clone git@github.com:badorius/curso-git.git persona2-curso-git
 git checkout -b bugfix-2-curso-git-persona2
+
+#Ahora tanto persona 1 como persona 2 suben los cambios
+#Persona 1
+git add .
+git commit -m "Fix #2"
+git push -u origin bugfix-2-curso-git
+
+#persona 2
+git add .
+git commit -m "Fix #2 persona2"
+git push -u origin bugfix-2-curso-git-persona2
+
+#ahora vamos github y vemos varias ramas, su historial partio del mismo commit, pero tienen conflictos en los cambios
+#mezclaremos la primera rama, seleccionamos la rama,  pull request y merge.
+#Hacemos lo mismo con la rama de la persona2 y nos muestra un error de que no se puede hacer merge
+#para ver los conflictos, hacemos el  pull request y le damos a resolve conflicts, nos muestra un editor donde nos mostrará el conflicto y podemos rectificar/ver
+#Si es algo simple se puede hacer desde github, pero normalmente se puede hacer desde vscode. para hacerlo desde el vscode,
+#Nos vamos al git de la persona 1 y hacemos un pull para descargar la ultima version con el bugfix de la persona 1
+git pull
+#Cambiamos a la rama de la persona dos
+git pull origin bugfix-2-curso-git-persona2
