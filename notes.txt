@@ -180,6 +180,7 @@ git checkout back
 #editamos indejx.js
 git add .
 git commit -m "Cambio backend 1"
+<<<<<<< HEAD
 #editamos index.js cambio 2
 --->>
 git commit -a -m "Cambio backend 2" --->> con -a hacemos un add y un commit a la vez
@@ -200,3 +201,5 @@ git branch -> Vemos las ramas del repositorio
 
 
 
+=======
+>>>>>>> cb4fa06 (Cambio backend 1)
