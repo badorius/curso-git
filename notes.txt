@@ -180,7 +180,6 @@ git checkout back
 #editamos indejx.js
 git add .
 git commit -m "Cambio backend 1"
-<<<<<<< HEAD
 #editamos index.js cambio 2
 --->>
 git commit -a -m "Cambio backend 2" --->> con -a hacemos un add y un commit a la vez
@@ -197,9 +196,24 @@ git log -n 3 --oneline
 #Solo queremos un commit para cada cosa, back/front
 git branch -> Vemos las ramas del repositorio
 #Dentro de front mezclamos la rama de back
+git merge back
+git log -n 7 --oneline
+#Ahora limpiaremos los commits antes de hacer el push para limpiar el historial
+#dentro de front despues del merge 
+git rebase -i feature-affiliate-links -> el rebase nos aplasta la rama hasta la que estemos, al ser interactivo -i nos abre el vim, cambiaremos de pick a squash  para que solo quede un front y un back
+#Luego guardamos los squash/pich y nos abre el fichero para modificar los mensajes, borramos los mensajes cambios frontend 1/2/3 a cambios frontend
+pick 7c05e02 Cambio frontend1
+squash 6afc01c Cambio frontend 2
+squash e366146 Cambio notes 2
+pick cb4fa06 Cambio backend 1
+squash 86310d2 Cambio backend 2
+squash b93c8d3 Cambio backend 3
+squash 63c2b55 Cambio notes 4
+
+Cambio frontend
 
 
+#ahora lo revisamos con git log --oneline -n 6
+#Ahora lo pasamos a la rama de afiliados
 
 
-=======
->>>>>>> cb4fa06 (Cambio backend 1)
