@@ -185,6 +185,7 @@ git commit -m "Cambio backend 1"
 git commit -a -m "Cambio backend 2" --->> con -a hacemos un add y un commit a la vez
 --->>
 #hacemos lo mismo cambio 3 para tener más comits, editamos el index.js
+<<<<<<< HEAD
 git commit -a -m "Cambio backend 3" 
 #Ahora pasamos al front 
 git checkout front
@@ -211,6 +212,8 @@ squash b93c8d3 Cambio backend 3
 squash 63c2b55 Cambio notes 4
 
 Cambio frontend
+=======
+>>>>>>> b93c8d3 (Cambio backend 3)
 
 
 #ahora lo revisamos con git log --oneline -n 6
