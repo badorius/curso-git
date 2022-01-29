@@ -166,4 +166,37 @@ git push -u origin bugfix-2-curso-git-persona2
 #Nos vamos al git de la persona 1 y hacemos un pull para descargar la ultima version con el bugfix de la persona 1
 git pull
 #Cambiamos a la rama de la persona dos
+git checkout master
+git config pull.rebase false 
 git pull origin bugfix-2-curso-git-persona2
+#en vscode aceptamos o modificamos la version que queremos e incluso podemos añadir algo
+git add index.jsgit commit -m "
+
+###Rebase interactivo
+git checkout -b feature-affiliate-links -> subiremos esta rama con un único pull request
+git branch front -> internamente trabajaremos en dos ramas
+git branch back
+git checkout back
+#editamos indejx.js
+git add .
+git commit -m "Cambio backend 1"
+#editamos index.js cambio 2
+--->>
+git commit -a -m "Cambio backend 2" --->> con -a hacemos un add y un commit a la vez
+--->>
+#hacemos lo mismo cambio 3 para tener más comits, editamos el index.js
+git commit -a -m "Cambio backend 3" 
+#Ahora pasamos al front 
+git checkout front
+#modificamos el index.html y hacemos -a commit/s
+git commit -a -m "Cambio front 1"
+#verificamos los cambios
+git log -n 3 --oneline
+#Tenemos los cambios del back y del front, tenemos que juntarlos y luego hacer un pullrequest
+#Solo queremos un commit para cada cosa, back/front
+git branch -> Vemos las ramas del repositorio
+#Dentro de front mezclamos la rama de back
+
+
+
+
