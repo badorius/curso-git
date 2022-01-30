@@ -226,4 +226,12 @@ git push -u origin feature-affiliate-links
 #El rebase solo se recomienda hacer en local, nunca en github ya que generariamos un conflico con el trabajo de otras personas.
 
 
-
+###Squase and merge
+git checkout master
+git pull
+git checkout -b feature-videos
+#hacemo cambios en index.js
+git commit -a -m "Cambios videos 1"
+git commit -a -m "Cambios videos 2"
+git commit -a -m "Cambios videos 3"
+git commit -a -m "Cambios videos 4"
