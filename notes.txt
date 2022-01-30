@@ -265,4 +265,3 @@ git stash pop -> veremos que recuperamos las entradas que teníamos en el index.
 git add .
 git commit -m "Cambios afiliados"
 git push 
-
