@@ -245,10 +245,24 @@ git push -u origin feature-videos
 #Si hacemos cambios en un archivo y luego vemos que los queremos descart, dejar como el original, no hace falta hacer un commit y luego un reset para eliminarlos, podemos hacer un
 git restore index.js -> Pone el archivo como estaba en el ultimo commit.
 
+#STASH
+git checkout feature-affiliate-links
+#hacemos cambios en index.html en algun momento alguien pone un bug issue en afiliados mientras tu estas trabajando. contrl k c (comand comment) <!-- cambio 3 --> 
+#Vamos a github i ponemos un issue en afiliates, titulo bug affiliate, en etiquetas podemos poner que es un bug, así saldrá etiquetada como bug, creamosel issue
+#una vez abierto el issue, que opciones tenemos:
+#podemos aplicar los czmbios que estamos haciendo y hacer un commit en la rama que estamos y abrir una nueva rama para resolver el issue y luego subirlo.
+#Otra opción es el stash, más sencillo, deshacemos los cambios realizados, pero no los perdemos, quedan almacenados, no son commits ni stage area,se pueden recuperar en cualquier momento.
+#Si hacemos un 
+git stash -> desaparecen los cambios del index.html
+#Ahora arreglamos el bug, añadiendo una funcion de afiliados en el index.js, hacemos un commit
+git add .
+git commit -m "Fix affiliate links bug #7"
+git push -u origin feature-affiliate-links
+#ahora hay que hacer un pullrequest/merge y cerrar el issue
+#Ahora para recuperar los cambios en esta misma rama
+git stash list (WIP= work in progress, no lo mezcles aún, pero puedes darle un vistazo)
+git stash pop -> veremos que recuperamos las entradas que teníamos en el index.html, luego ya podemos hacer un add commit push
+git add .
+git commit -m "Cambios afiliados"
+git push 
 
-
-
-
-
-git commit -a -m "Cambios videos 3"
-git commit -a -m "Cambios videos 4"
