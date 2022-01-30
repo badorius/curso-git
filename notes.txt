@@ -233,5 +233,22 @@ git checkout -b feature-videos
 #hacemo cambios en index.js
 git commit -a -m "Cambios videos 1"
 git commit -a -m "Cambios videos 2"
+#Ahora nos equivocamos con el titulo del commit y lo queremos modificar
+git commit -a -m "Cambios videos 2"
+git commit --amend -m "Cambios videos 3" --> Con esto cambiaremos el último titulosiempre que no este subido a github
+#ahora subimos a github
+git push -u origin feature-videos
+#Ahora vamos a guithub para crear el pullrequest, hacemos pullrequest dentro de la rama y después en el botón de merge, desplegamos y teenemos varias opciones
+#Rebase que sería la misma que hemos visto en eel capitulo anterior, podemos elegir distintos commits
+#Si hacemos un squash, nos los mezclaria todos los commits que tenga esta rama
+
+#Si hacemos cambios en un archivo y luego vemos que los queremos descart, dejar como el original, no hace falta hacer un commit y luego un reset para eliminarlos, podemos hacer un
+git restore index.js -> Pone el archivo como estaba en el ultimo commit.
+
+
+
+
+
+
 git commit -a -m "Cambios videos 3"
 git commit -a -m "Cambios videos 4"
