@@ -10,7 +10,7 @@ git status -> para ver index.html en stageing
 git commit -m " add index.html" 
 ```
 
-#Modificamos el index.html```bash
+#Modificamos el index.htm
 ```bash
 git status -> veremos que hemos modificado el index.html (tambien lo veremos en el editor)
 git add index.html
