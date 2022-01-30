@@ -166,4 +166,89 @@ git push -u origin bugfix-2-curso-git-persona2
 #Nos vamos al git de la persona 1 y hacemos un pull para descargar la ultima version con el bugfix de la persona 1
 git pull
 #Cambiamos a la rama de la persona dos
+git checkout master
+git config pull.rebase false 
 git pull origin bugfix-2-curso-git-persona2
+#en vscode aceptamos o modificamos la version que queremos e incluso podemos añadir algo
+git add index.jsgit commit -m "
+
+###Rebase interactivo
+git checkout -b feature-affiliate-links -> subiremos esta rama con un único pull request
+git branch front -> internamente trabajaremos en dos ramas
+git branch back
+git checkout back
+#editamos indejx.js
+git add .
+git commit -m "Cambio backend 1"
+#editamos index.js cambio 2
+--->>
+git commit -a -m "Cambio backend 2" --->> con -a hacemos un add y un commit a la vez
+--->>
+#hacemos lo mismo cambio 3 para tener más comits, editamos el index.js
+git commit -a -m "Cambio backend 3" 
+#Ahora pasamos al front 
+git checkout front
+#modificamos el index.html y hacemos -a commit/s
+git commit -a -m "Cambio front 1"
+#verificamos los cambios
+git log -n 3 --oneline
+#Tenemos los cambios del back y del front, tenemos que juntarlos y luego hacer un pullrequest
+#Solo queremos un commit para cada cosa, back/front
+git branch -> Vemos las ramas del repositorio
+#Dentro de front mezclamos la rama de back
+git merge back
+git log -n 7 --oneline
+#Ahora limpiaremos los commits antes de hacer el push para limpiar el historial
+#dentro de front despues del merge 
+git rebase -i feature-affiliate-links -> el rebase nos aplasta la rama hasta la que estemos, al ser interactivo -i nos abre el vim, cambiaremos de pick a squash  para que solo quede un front y un back
+#Luego guardamos los squash/pich y nos abre el fichero para modificar los mensajes, borramos los mensajes cambios frontend 1/2/3 a cambios frontend
+pick 7c05e02 Cambio frontend1
+squash 6afc01c Cambio frontend 2
+squash e366146 Cambio notes 2
+pick cb4fa06 Cambio backend 1
+squash 86310d2 Cambio backend 2
+squash b93c8d3 Cambio backend 3
+squash 63c2b55 Cambio notes 4
+
+Cambio frontend
+
+
+#ahora lo revisamos con git log --oneline -n 6
+#Ahora lo pasamos a la rama de afiliados
+
+En el minuto 06:34, si hicieramos el rebase estando en feature-affiliate-links y trayendo front, no haría falta hacer el merge del final. Es decir:
+git checkout feature-affiliate-links
+git rebase -i front
+git merge front
+git branch -D front back
+git push -u origin feature-affiliate-links
+#Ahora en github hacemos el pull request, veremos que solo tiene 2 commits
+#El rebase solo se recomienda hacer en local, nunca en github ya que generariamos un conflico con el trabajo de otras personas.
+
+
+###Squase and merge
+git checkout master
+git pull
+git checkout -b feature-videos
+#hacemo cambios en index.js
+git commit -a -m "Cambios videos 1"
+git commit -a -m "Cambios videos 2"
+#Ahora nos equivocamos con el titulo del commit y lo queremos modificar
+git commit -a -m "Cambios videos 2"
+git commit --amend -m "Cambios videos 3" --> Con esto cambiaremos el último titulosiempre que no este subido a github
+#ahora subimos a github
+git push -u origin feature-videos
+#Ahora vamos a guithub para crear el pullrequest, hacemos pullrequest dentro de la rama y después en el botón de merge, desplegamos y teenemos varias opciones
+#Rebase que sería la misma que hemos visto en eel capitulo anterior, podemos elegir distintos commits
+#Si hacemos un squash, nos los mezclaria todos los commits que tenga esta rama
+
+#Si hacemos cambios en un archivo y luego vemos que los queremos descart, dejar como el original, no hace falta hacer un commit y luego un reset para eliminarlos, podemos hacer un
+git restore index.js -> Pone el archivo como estaba en el ultimo commit.
+
+
+
+
+
+
+git commit -a -m "Cambios videos 3"
+git commit -a -m "Cambios videos 4"
