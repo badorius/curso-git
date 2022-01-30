@@ -59,7 +59,7 @@ const loadAdds = () => {
 }
 
 const affiliateRedirect = () => {
-  // resolver el bug
+  // resolver el bug - bug resuelto
 }
 
 // test commit
