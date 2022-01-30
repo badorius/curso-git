@@ -1,5 +1,5 @@
-#H1 CURSO GIT MASTERMMIND
-
+### CURSO GIT MASTERMMIND
+```bash
 git config --global user.email "salvadormuntane@gmail.com" 
 git config --global user.name "badorius" 
 git version
@@ -8,7 +8,10 @@ git status -> ver que ficheros gestiona git
 git add index index.html -> lo pasamos a stageing area, faltara el commit
 git status -> para ver index.html en stageing
 git commit -m " add index.html" 
-#hacemos cambios en el index.html
+```bash
+
+#Modificamos el index.html```bash
+```bash
 git status -> veremos que hemos modificado el index.html (tambien lo veremos en el editor)
 git add index.html
 git commit -m "Aadido el contenido del blog" 
@@ -16,8 +19,10 @@ git log -> vemos los dos commits realizados y el que esta activo en el master
 git checkout f1daaa3256fff3d246f1a3528ac583309c3fbd33 -> para volver a la version anterior (cogiengo el hash de git log) nos muestra un warging de deatached HEAD
 git checkout b69178081f1f594e4603c52b47d31a10ac2d8f4a -> volvemos a la ultima, veremos que el texto en el editor se nos actualiza
 git checkout master -> esto nos devuelve al ultimo commit que hemos realizado y dejamos de estar de deatached HEAD. Mas adelante veremos las ramas.
+```
 
 #Como deshacer cambios, no me gusta el ultimo cambio y buscamos una manera mejor de haccerlo
+```bash
 git reset f1daaa -> eliminamos el commit que no queremos, lo revisamos con un git log
 git log
 git add index.html
@@ -25,69 +30,89 @@ git status -> veremos que el index.html ha estado modificado.
 git commit -m "Contenido del blog"  -> hacemos el commit con el nuevo cambio 
 git log -> lo verificamos
 git reset --hard f1daaa -> A diferencia del anterior, este lo elimina de manera definitva todos los cambios del hash en adelante, es cuando lo realizado ya no se quiere.
+```
 #recreamos el index.html con el contenido correcto y luego
+
+```bash
 git add index.html
 git commit -m " Contenido del blog" 
 git log --oneline -> para que lo muestre en una sola linea
-
+```
 
 #borramos por error un fichero gestionado con el git (rm index.html) no perdemos nada si no hacemos git reset --hard
+```bash
 git status -> veremos que hemos eliminado el index.html
 git restore index.html-> restauramos el fichero index.html
+```
 #Todos los archivos y carpetas estan en la carpeta .git
 
 #Aadimos mas ficheros, populamos el fichero style.css y hacemos cambios en el index.html i la img
+```bash
 git add . -> metemos todo el directorio actual en stageing area
 git commit -m "Create Navbar"
-
+```
 #Subir contenido en github (se puede subir por ssh o https)
+```bash
 git remote add origin git@github.com:badorius/curso-git.git
 git remote -v -> de donde podemos descargar (fetch) o subir (push)
 git branch -M main -> cambiar el nombre de la rama, por ahora lo dejaremos como master
+```
 
 #crear claves ssh antes de hacer el push
-ssh-keygen -t ed25519 -C "salvadormuntane@gmail.com" (generamos clave publica y privada) en setings de github, subimos la pub
+```bash
+ssh-keygen -t ed25519 -C "pepito@gmail.com" (generamos clave publica y privada) en setings de github, subimos la pub
 git push -u origin master -> esto solo la primera vez, las siguientes git push 
-
+```
 ####como crear ramas, si hay varias personas trabajando en el mismo proyecto, no es buena idea trabajar en la rama principal (master) creamos una bifurcación en la rama principal (master o main) 
 ####cada uno trabaja en una rama y al final se mezclan las ramas en el master, es mas facil para solucionar conflictos.
 
+```bash
 git checkout -b feature-posts-styles -> Al igual que antes utilizábamos el checkout para volver a un commit anterior, ahora lo utilizaremos para crear una nueva rama
 git branch -> veremos en que rama estamos, en el editor también en la barra inferior.
+```
 
 ###Realizamos cambios en el index.html y sytle.css, una vez realizados los cambios, al estar en la rama feature-posts-styles
+```bash
 git status -> revisamos los cambios
 git add index.html
 git commit -m "Add post html"
 git add style.css
 git commit -m "Add post style"
+```
 #Podriamos añadir los dos ficheros a la vez y realizar un único commit, pero de esta forma lo hacemos más granular.
 #aquí hemos finalizado la rama, ahora hay que añadir nuestra rama al master
+```bash
 git log --oneline
+```
 #ahora hemos creado una rama en local, pero hay que crearla en github, con esto creamos y subimos la nueva rama
+```bash
 git push -u origin feature-posts-styles
+```
 #Tanto en github como en el vscode podremos ver la nueva rama todos los cambios, si cambiamos a la rama master no veremos los cambios de la nueva rama
+```bash
 git checkout master ->cambiamos a master y no vemos los cambios de la rama feautre-posts-estyles
 git checkout feature-posts-styles -> cambiamos de nuevo a la rama feature-posts-styles
+```
 
 #En git hub ya nos muestra una alarma de que existe una rama con la opción de compare & pull request.
 #Ahora realizaremos otro clone, para simular otra persona trabajando en otra rama. La ruta la copiamos del botón code->ssh de github
-
+```bash
 git clone git@github.com:badorius/curso-git.git persona-backend
-
+```
 #Volvemos a la rama master y creamos un README.md Antes hacemos los add, commit y push
+```bash
 git add notes.txt 
 git status
 git commit -m "Add post notes.v3"
 git push -u origin feature-posts-styles
 git checkout master
-
+```
 #creamos un fichero READM.md y lo populamos, (sintaxis markdown) hacemos add, commit y push, podemos ver el readme en el git. Ahora tenemos modificaciones diferentes en las dos ramas, hasta que no las mezclemos.
 #para hacer el merge en github click con compare & pull request le damos un título y creamos el pull request. confirmamos el cambio 
-
+```bash
 git checkout master
 git pull -> hemos descargado los cambios merged en local.
-
+```
 ######mezclar rams en local
 #Cada vez se nos asigna una tarea, normalmente crearemos una rama nueva y luego haremos el merge.
 git checkout -b feature-adds
