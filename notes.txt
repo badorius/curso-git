@@ -265,3 +265,25 @@ git stash pop -> veremos que recuperamos las entradas que teníamos en el index.
 git add .
 git commit -m "Cambios afiliados"
 git push 
+
+
+
+#Tag y versionado semántico. con git tag hacemos versiones de la aplicación ex. 1.4.5
+#Si buscamos en google versionado semántico, hay tres números ejemplo 2.0.0 
+#Versión mayor Si hacemos un cambio que tiene un impacto o modifica la API / funciones, hay funciones que dejaran de funcionar, lo que cambiariamos a 3.0.0
+#Versión menor, cuando hacemos un cambio que es compatible con versiones anteriores, haces un cambio en la librería que añade una función nueva, pero mantenemos compatibilidad, pasaríamos a 2.1.0
+#Si arreglamos un bug pasaríamos a la 2.0.1
+#Para hacer esto en git, lo hacemos con git tag, para asociarlo a un commit especificio:
+git tag -a v0.1.0 -m "Primera versión del curso de Git de Mastermind"-> El primer número si está en 0 está en desarrollo, la que tiene el 1 ya sería la que está en producción.
+git tag -> Vemos listado de todos los tags
+git show v0.1.0 -> nos muestra info del tag.
+git push origin v0.1.0 -> Subimos el tag
+
+#Hacemos modificaciones en el codigo para producción ready y modificamos la versión.
+#modificamos el fichero y hacemos
+git add .
+git commit -m "Producction ready"
+git push
+#ahora nos iremos a github y hacemos lo mismo desde github -> Create a new release -> Chose tag
+#version 1.0.0 versión prod descripción - > publish, ahora tenemos dos releases.
+
