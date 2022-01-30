@@ -8,7 +8,7 @@ git status -> ver que ficheros gestiona git
 git add index index.html -> lo pasamos a stageing area, faltara el commit
 git status -> para ver index.html en stageing
 git commit -m " add index.html" 
-```bash
+```
 
 #Modificamos el index.html```bash
 ```bash
