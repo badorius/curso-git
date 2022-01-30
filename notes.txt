@@ -242,6 +242,9 @@ git push -u origin feature-videos
 #Rebase que sería la misma que hemos visto en eel capitulo anterior, podemos elegir distintos commits
 #Si hacemos un squash, nos los mezclaria todos los commits que tenga esta rama
 
+#Si hacemos cambios en un archivo y luego vemos que los queremos descart, dejar como el original, no hace falta hacer un commit y luego un reset para eliminarlos, podemos hacer un
+git restore index.js
+
 
 
 
