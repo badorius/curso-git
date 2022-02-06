@@ -1,6 +1,6 @@
 # CURSO GIT MASTERMMIND
 ```bash
-git config --global user.email "salvadormuntane@gmail.com" 
+git config --global user.email "badorius@gmail.com" 
 git config --global user.name "badorius" 
 git version
 git init ->crear repo git
